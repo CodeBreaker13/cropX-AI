@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     chatInput.value = "";
 
     try {
-      // ✅ correct backend URL
+    
       const backendURL =
         window.location.origin.includes("127.0.0.1") ||
         window.location.origin.includes("localhost")
