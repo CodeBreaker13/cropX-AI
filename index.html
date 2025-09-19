@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crop AI Prototype</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="{{ url_for('static', filename='script5.js') }}"></script>
+  </head>
+  <body
+    class="bg-black text-white flex items-center justify-center min-h-screen"
+  >
+    <div
+      class="relative w-full min-h-screen bg-[url('https://images.pexels.com/photos/1483880/pexels-photo-1483880.jpeg')] bg-cover bg-center"
+    >
+      <div class="absolute inset-0 bg-black/70"></div>
+
+      <div
+        class="relative grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto p-8 border-green-600"
+      >
+        <div
+          class="flex flex-col items-center justify-center border rounded-2xl p-6 bg-black-900 shadow-lg"
+        >
+          <div
+            class="w-full h-80 bg-gray-700 rounded-lg flex items-center justify-center overflow-hidden"
+          >
+            <img
+              src="https://images.pexels.com/photos/1112080/pexels-photo-1112080.jpeg"
+              alt="Agriculture"
+              class="object-cover w-full h-full"
+            />
+          </div>
+          <h2 class="text-3xl font-bold text-center mt-6 leading-relaxed">
+            CropX AI <br />
+            🌽 Agricultural Awareness 🚜
+          </h2>
+          <p class="text-gray-300 text-lg mt-4 text-center px-6">
+            🌱 Agriculture awareness helps farmers adopt modern techniques,
+            conserve water, and improve crop yields sustainably. It empowers
+            rural communities with knowledge about organic farming,
+            climate-smart practices, and government support schemes.
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col border rounded-2xl p-6 bg-black-900 shadow-lg space-y-8"
+        >
+          <nav
+            class="flex justify-center space-x-10 border-b pb-4 text-lg font-medium"
+          >
+            <a href="#" class="hover:text-blue-700 transition">Home</a>
+            <a
+              href="{{ url_for('about') }}"
+              class="hover:text-blue-700 transition"
+              >About Us</a
+            >
+
+            <a href="#" class="hover:text-blue-700 transition">App</a>
+          </nav>
+
+          <div
+            class="bg-black-900 rounded-xl p-8 hover:bg-gray-900/90 transition shadow-md shadow-transparent"
+          >
+            <h3 class="text-xl font-semibold mb-3">
+              Explore our 🌾 CropX Assistant AI
+            </h3>
+            <p class="text-gray-300 leading-relaxed">
+              An intelligent chatbot that empowers farmers to detect crop
+              diseases instantly—just by uploading an image. Using advanced
+              image recognition and plant pathology models, it identifies issues
+              like blight, rot, or pest damage and suggests actionable remedies.
+            </p>
+          </div>
+
+          <div
+            class="bg-black-900 rounded-xl p-8 hover:bg-gray-900/90 transition shadow-md"
+          >
+            <h3 class="text-xl font-semibold mb-3">
+              🧪 Crop Care Tips & Seasonal Guides
+            </h3>
+            <p class="text-gray-300 leading-relaxed">
+              Empower farmers with region-specific crop care advice—what to
+              plant, when to water, how to rotate. Include monthly calendars,
+              pest alerts, and soil prep tips. <br />
+              “Your field’s rhythm, decoded.” <br />
+              Suggest curated products based on diagnosed disease—organic or
+              chemical—with dosage, timing, and safety tips.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="chat-container"
+        class="fixed bottom-6 right-6 flex flex-col items-end space-y-2 z-50"
+      >
+        <div
+          id="chat-box"
+          class="w-80 h-96 bg-gray-900 rounded-xl shadow-lg flex flex-col overflow-hidden"
+        >
+          <div
+            class="bg-green-600 p-4 text-white font-bold flex justify-between items-center"
+          >
+            CropX AI Assistant
+            <button id="close-chat" class="text-white text-xl font-bold">
+              ×
+            </button>
+          </div>
+          <div
+            id="chat-messages"
+            class="flex-1 p-4 overflow-y-auto text-gray-200"
+          >
+            <p class="text-gray-400">Say hi to CropX AI Assistant👋</p>
+          </div>
+          <div class="p-4 border-t border-gray-700 flex">
+            <input
+              id="chat-input"
+              type="text"
+              placeholder="Ask your query..."
+              class="flex-1 p-2 rounded-l-xl bg-gray-800 text-white focus:outline-none"
+            />
+            <button
+              id="send-btn"
+              class="bg-green-600 px-4 rounded-r-xl text-white font-bold hover:bg-green-500"
+            >
+              Send
+            </button>
+          </div>
+        </div>
+
+        <button
+          id="open-chat"
+          class="bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-500 transition"
+        >
+          ☰
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
